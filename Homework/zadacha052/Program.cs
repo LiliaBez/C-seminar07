@@ -12,8 +12,8 @@ FindArithmeticMeanColumn(numbers);
 
 void FindArithmeticMeanColumn (int[,] numbers)
 {
-    int height = numbers.GetLength(0);
-    int widht = numbers.GetLength(1);
+    double height = numbers.GetLength(0);
+    double widht = numbers.GetLength(1);
     for (int j = 0; j < widht; j++)
     {
         int sum = 0;
@@ -21,8 +21,8 @@ void FindArithmeticMeanColumn (int[,] numbers)
         {
             sum += numbers[i, j];
         }
-        float arithmeticMean = sum / height;
-        Console.WriteLine($"Среднее арифметическое элементов столбца {j} равно: {arithmeticMean}");
+        double arithmeticMean = sum / height;
+        Console.WriteLine($"Среднее арифметическое элементов столбца {j} равно: {Math.Round (arithmeticMean, 1)}");
     }
 }
 
