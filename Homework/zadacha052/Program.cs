@@ -19,7 +19,7 @@ void FindArithmeticMeanColumn (int[,] numbers)
         int sum = 0;
         for (int i = 0; i < height; i++)
         {
-            sum = sum + numbers[i, j];
+            sum += numbers[i, j];
         }
         float arithmeticMean = sum / height;
         Console.WriteLine($"Среднее арифметическое элементов столбца {j} равно: {arithmeticMean}");
