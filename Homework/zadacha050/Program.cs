@@ -19,6 +19,8 @@ if (indexHeight >= height || indexWidht >= width)
 FindElement(numbers, height, width);
 
 
+
+
 int EnterInt(string prompt)
 {
     Console.Write(prompt);
@@ -49,7 +51,7 @@ void Print2dArray(int[,] numbers, int height, int widht)
 }
 
 
-void FindElement (int[,] numbers, int height, int widht)
+void FindElement(int[,] numbers, int height, int widht)
 {
     for (int i = 0; i < height; i++)
     {
