@@ -2,13 +2,21 @@
 элемента в двумерном массиве, и возвращает значение
 этого элемента или же указание, что такого элемента нет.*/
 
-int height = EnterInt("Enter height: "); //высота массива
-int width = EnterInt("Enter widht: ");  //ширина массива
+int height = EnterInt("Введите количество строк: "); //высота массива
+int width = EnterInt("Введите количество столбцов: ");  //ширина массива
 
 int[,] numbers = new int[height, width];
 
 Fill2DArray(numbers, height, width);
 Print2dArray(numbers, height, width);
+
+int indexHeight = EnterInt("Введите индекс строки искомого элемента: ");
+int indexWidht = EnterInt("Введите индекс столбца искомого элемента: ");
+
+if (indexHeight >= height || indexWidht >= width)
+    Console.WriteLine("Такого числа в массиве нет");
+
+FindElement(numbers, height, width);
 
 
 int EnterInt(string prompt)
@@ -40,23 +48,17 @@ void Print2dArray(int[,] numbers, int height, int widht)
     }
 }
 
-Console.Write("Введите индекс строки искомого элемента: ");
-int indexHeight = int.Parse(Console.ReadLine()!);
-Console.Write("Введите индекс столбца искомого элемента: ");
-int indexWidht = int.Parse(Console.ReadLine()!);
 
-for (int i = 0; i < height; i++)
+void FindElement (int[,] numbers, int height, int widht)
 {
-    for (int j = 0; j < width; j++)
+    for (int i = 0; i < height; i++)
     {
-        if (i == indexHeight && j == indexWidht)
+        for (int j = 0; j < width; j++)
         {
-            Console.WriteLine($"Искомый элемент: {numbers[i, j]}");
+            if (i == indexHeight && j == indexWidht)
+            {
+                Console.WriteLine($"Искомый элемент: {numbers[i, j]}");
+            }
         }
     }
-}
-
-if (indexHeight >= height || indexWidht >= width)
-{
-    Console.WriteLine("Такого числа в массиве нет");
 }
