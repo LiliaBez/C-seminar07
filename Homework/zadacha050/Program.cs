@@ -49,9 +49,14 @@ for (int i = 0; i < height; i++)
 {
     for (int j = 0; j < width; j++)
     {
-        if(i == indexHeight && j == indexWidht)
+        if (i == indexHeight && j == indexWidht)
         {
             Console.WriteLine($"Искомый элемент: {numbers[i, j]}");
         }
     }
+}
+
+if (indexHeight >= height || indexWidht >= width)
+{
+    Console.WriteLine("Такого числа в массиве нет");
 }
