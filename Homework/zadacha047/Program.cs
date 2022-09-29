@@ -34,7 +34,7 @@ void Print2dArray(double[,] numbers, int height, int widht)
     {
         for (int j = 0; j < width; j++)
         {
-            Console.Write($"{numbers[i, j]}   ", 5);
+            Console.Write($"{numbers[i, j],5} ");
         }
         Console.WriteLine();
     }
